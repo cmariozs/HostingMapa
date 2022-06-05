@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css">
+    <title>WebMapping</title>
+
+    <style>
+        #map {
+            width: 100%;
+            height: 580px;
+            box-shadow: 5px 5px 5px #888;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map">
+    </div>
+</body>
+
+<script>
+    var OMS = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributiors'
+    });
+
+    var map = new L.map('map', {
+        center: [1.6207919206279122, -75.60447018002917],
+        layers: OMS,
+        zoom: 15
+    });
+
+    var MyIcon = L.icon({
+        iconUrl: 'https://chaira.uniamazonia.edu.co/v10/images/logos/logosimbolo_transparente.gif',
+        iconSize: [40,40],
+        popupAnchor: [-10, -10]
+    });
+
+    var marker = L.marker([1.6202556925043885, -75.6044058042894],{
+        icon: MyIcon,
+        draggable: true,
+        title: "Clic para el Detalle"
+    })
+    .addTo(map).bindPopup("Universidad de la Amazonia<b>www.uniamazonia.edu.co.com </b>");
+
+    var marker = L.marker([1.615058172818392, -75.61389969468125],{
+        draggable: true,
+        title: "Clic para el Detalle"
+    })
+    .addTo(map).bindPopup("Alcaldía");
+
+    var MyIcon = L.icon({
+        iconUrl: 'https://cdn-icons-png.flaticon.com/512/1239/1239525.png',
+        iconSize: [40,40],
+        popupAnchor: [-10, -10]
+    });
+
+    var marker = L.marker([1.619600255550574, -75.61589712715971],{
+        icon: MyIcon,
+        draggable: true,
+        title: "Clic para el Detalle"
+    })
+    .addTo(map).bindPopup("Casa");
+
+    var circle = L.circle([1.615058172818392, -75.61389969468125], 500, {  //ALCALDIA
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.1
+    })
+    .addTo(map).bindPopup("Explosión");
+
+    var polygon = L.polygon([
+        [1.6151828723496784, -75.61373592405974],
+        [1.6154246064805815, -75.6130098740656],
+        [1.6146913699974257, -75.61278587284816],
+        [1.6144848911270804, -75.6135237916011]
+    ]).addTo(map).bindPopup("Plaza Santander");
+    
+    var ruta1 = new L.latLng(1.619600255550574, -75.61589712715971); // Casa
+    var ruta2 = new L.latLng(1.620060653721103, -75.61605704533709);
+    var ruta3 = new L.latLng(1.62025723309345, -75.61522341542766);
+    var ruta4 = new L.latLng(1.6204207833788744, -75.61389571584172);
+    var ruta5 = new L.latLng(1.6203886088616866, -75.61382330184436);
+    var ruta6 = new L.latLng(1.620442231671665, -75.61367577999275);
+    var ruta7 = new L.latLng(1.6205119413954059, -75.61346656693664);
+    var ruta8 = new L.latLng(1.6203859302985717, -75.61130918631838);
+    var ruta9 = new L.latLng(1.6206103884822096, -75.61024596865677);
+    var ruta10 = new L.latLng(1.6203958975835773, -75.60999920563573);
+    var ruta11 = new L.latLng(1.6203637238807223, -75.6096880688081); 
+    var ruta12 = new L.latLng(1.6198988635739655, -75.60835881925378);
+    var ruta13 = new L.latLng(1.6196111416936265, -75.60756181758568);
+    var ruta14 = new L.latLng(1.619445747991713, -75.60711433956888);
+    var ruta15 = new L.latLng(1.6192372895838434, -75.60681393226987);
+    var ruta16 = new L.latLng(1.6190998812604864, -75.60670195004535);
+    var ruta17 = new L.latLng(1.6180625334296916, -75.60601259338927);
+    var ruta18 = new L.latLng(1.615542501172601, -75.60437891267293);
+    var ruta19 = new L.latLng(1.6153673154965023, -75.60432044291456);
+    var ruta20 = new L.latLng(1.615349217755103, -75.60417426248941);
+    var ruta21 = new L.latLng(1.615475901785547, -75.60412598268726);
+    var ruta22 = new L.latLng(1.6155422600916391, -75.6041863324167);
+    var ruta23 = new L.latLng(1.6157071312598723, -75.60432479337953);
+    var ruta24 = new L.latLng(1.617829307802185, -75.6056902965927);
+    var ruta25 = new L.latLng(1.6188034633672472, -75.60638072595118);
+    var ruta26 = new L.latLng(1.6200834739170722, -75.60516896064725);
+    var ruta27 = new L.latLng(1.6201691471548052, -75.6051700883951);
+
+    var latlngs = [ruta1,ruta2,ruta3,ruta4,
+                    ruta5,ruta6,ruta7,ruta8,
+                    ruta9,ruta10,ruta11,ruta12,
+                    ruta13,ruta14,ruta15,ruta16,
+                    ruta17,ruta18,ruta19,ruta20,
+                    ruta21,ruta22,ruta23,ruta24,
+                    ruta25,ruta26,ruta27];
+
+    var polyline = L.polyline(
+        latlngs, {color: 'blue'}
+    ).addTo(map).bindPopup("CASA - UDLA");
+
+</script>
+</html>
