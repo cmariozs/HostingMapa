@@ -43,13 +43,13 @@
 
     var marker = L.marker([1.6202556925043885, -75.6044058042894],{
         icon: MyIcon,
-        draggable: true,
+        draggable: flase,
         title: "Clic para el Detalle"
     })
     .addTo(map).bindPopup("Universidad de la Amazonia<b>www.uniamazonia.edu.co.com </b>");
 
     var marker = L.marker([1.615058172818392, -75.61389969468125],{
-        draggable: true,
+        draggable: false,
         title: "Clic para el Detalle"
     })
     .addTo(map).bindPopup("Alcaldía");
@@ -62,7 +62,7 @@
 
     var marker = L.marker([1.619600255550574, -75.61589712715971],{
         icon: MyIcon,
-        draggable: true,
+        draggable: false,
         title: "Clic para el Detalle"
     })
     .addTo(map).bindPopup("Casa");
